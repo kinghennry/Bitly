@@ -426,7 +426,7 @@ button {
   background: #edf2fe;
   color: #2a5bd7;
   width: 30%;
-  margin-top: 15px;
+  margin: 15px 0 15px;
   padding: 15px 0;
   text-align: center;
   border-radius: var(--basic-radius);
@@ -480,6 +480,28 @@ footer {
   display: none;
 }
 
+/* testemonial */
+.test_item {
+  border: 1px solid black;
+  border-radius: 25px;
+  padding: 30px 20px;
+  position: relative;
+  margin: 0 20px;
+}
+.test-icon {
+  position: absolute;
+  font-size: 60px;
+  top: 0px;
+  right: 4%;
+}
+
+.test_item > h2 {
+  padding: 20px 0 30px;
+}
+.test_item > h5 {
+  font-weight: 400;
+}
+
 /* media queries  */
 @media (max-width: 1024px) {
   .platform-grid {
@@ -524,7 +546,8 @@ footer {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .answer {
+  .answer,
+  .question {
     padding: 0 0rem;
   }
 
@@ -614,5 +637,14 @@ footer {
   .footer_icons {
     justify-content: center;
     gap: 20px;
+  }
+  .test_item > h2 {
+    font-size: 17px;
+  }
+  .test-icon {
+    font-size: 30px;
+  }
+  .test_item {
+    margin: 0 10px;
   }
 }

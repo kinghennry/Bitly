@@ -3,13 +3,15 @@ import { FiChevronDown } from "react-icons/fi";
 
 function Accordion({ title, answer, reasons, btns }) {
   const [showInfo, setShowInfo] = useState(false);
+  const [toggle, setToggle] = useState(false);
   return (
     <article className="accordion-item">
-      <div className={`question ${showInfo ? "ques-active" : ""}`}>
+      <div className={`question ${toggle ? "ques-active" : ""}`}>
         <FiChevronDown
           className={`icon ${showInfo ? "icon-active" : ""}`}
           onClick={() => {
             setShowInfo(!showInfo);
+            setToggle(!toggle);
           }}
         />
         <span className="question-text">{title}</span>

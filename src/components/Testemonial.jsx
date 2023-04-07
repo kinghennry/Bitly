@@ -1,5 +1,52 @@
 import React from "react";
 import Banner from "./Banner";
+import Carousel from "react-multi-carousel";
+import { FaQuoteRight } from "react-icons/fa";
+
+const responsive = {
+  desktop: {
+    breakpoint: { max: 3000, min: 1619 },
+    items: 1,
+    slidesToSlide: 1, // optional, default to 1.
+  },
+  laptop: {
+    breakpoint: { max: 1619, min: 1024 },
+    items: 1,
+    slidesToSlide: 1, // optional, default to 1.
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 640 },
+    items: 1,
+    slidesToSlide: 1, // optional, default to 1.
+  },
+  mobile: {
+    breakpoint: { max: 639, min: 0 },
+    items: 1,
+    slidesToSlide: 1, // optional, default to 1.
+  },
+};
+
+const carouselParams = {
+  additionalTransfrom: 0,
+  arrows: false,
+  autoPlaySpeed: 3000,
+  centerMode: false,
+  className: "",
+  containerClass: "carousel-container",
+  dotListClass: "",
+  draggable: true,
+  focusOnSelect: false,
+  infinite: true,
+  itemClass: "",
+  keyBoardControl: true,
+  minimumTouchDrag: 80,
+  renderButtonGroupOutside: true,
+  renderDotsOutside: false,
+  responsive: responsive,
+  showDots: false,
+  sliderClass: "",
+  slidesToSlide: 2,
+};
 
 function Testemonial() {
   const items = [
@@ -30,13 +77,32 @@ function Testemonial() {
     },
   ];
   return (
-    <div>
+    <>
       <div className="container">
         <div className="flexbox-sty flex-dir spacing">
           <Banner header="What Bitly customers are saying" />
         </div>
+        <Carousel {...carouselParams}>
+          {items.map((item, index) => {
+            return (
+              <div key={index} className="test_item flex-dir">
+                <div className="test_star">
+                  <img
+                    src="https://docrdsfx76ssb.cloudfront.net/static/1680205903/pages/wp-content/uploads/2021/11/stars-quote-widget.png"
+                    alt="star"
+                  />
+                </div>
+                <span>
+                  <FaQuoteRight className="test-icon" />
+                </span>
+                <h2>{item.text}</h2>
+                <h5>{item.name}</h5>
+              </div>
+            );
+          })}
+        </Carousel>
       </div>
-    </div>
+    </>
   );
 }
 
