@@ -7,11 +7,12 @@ import Accordion from "./Accordion";
 function FAQs() {
   const [questions, setQuestions] = useState(data);
   return (
-    <section className="spacing">
+    <>
       <div className="container">
         <div className="flexbox-sty flex-dir">
           <Banner header="Frequently asked questions" />
         </div>
+        <div className="hr" style={{ marginTop: "35px " }} />
 
         <div className="accordion">
           {questions.map((question) => {
@@ -19,7 +20,7 @@ function FAQs() {
           })}
         </div>
       </div>
-    </section>
+    </>
   );
 }
 

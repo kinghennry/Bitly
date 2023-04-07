@@ -325,9 +325,11 @@ button {
 }
 
 /* stats sty */
-.stat-item:not(:last-child) {
+.stat-item:not(:last-child),
+.accordion-item:not(:last-child) {
   border-bottom: 1px solid #cacaca;
 }
+
 .stat-item {
   padding: 0.5rem 2rem;
   gap: 20px;
@@ -350,9 +352,6 @@ button {
 
 /* brands sty */
 .brand-imgs {
-  /* display: flex; */
-  /* justify-content: space-between; */
-  /* align-items: center; */
   max-width: 60rem;
   margin: 4rem auto 5rem;
   display: grid;
@@ -361,21 +360,76 @@ button {
 
 /* accordion sty */
 .accordion {
-  margin: 0 auto;
+  margin: 0 auto 50px;
   max-width: 80rem;
-  /* text-align: center; */
-  border: 1px solid red;
 }
 
-.accordion-item {
-  padding: 1.5rem 0 1.125rem;
-  border-bottom: 1px solid blue;
+.question {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  transition: background 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  padding: 0rem 2rem;
+}
+.question:hover {
+  background: #e6e6e6;
+}
+.ques-active {
+  background: #e6e6e6;
+}
+.answer-btns {
+  border-radius: var(--basic-radius);
+}
+.answer {
+  padding: 0 4rem;
+}
+.icon {
+  font-size: 28px;
+  margin-right: 15px;
+  transition: transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  cursor: pointer;
+}
+
+.icon-active {
+  transform: rotateZ(180deg);
+  font-size: 28px;
+  margin-right: 15px;
+}
+
+.question-text {
+  font-weight: 700;
+  font-size: 20px;
+  padding: 7px 0;
 }
 
 /* info sty */
 /* fact sty */
 .fact-bg {
   background-color: var(--fact-background-color);
+}
+
+#answer-text {
+  color: #0a0a0a;
+  font-size: 17px;
+  padding: 18px 14px;
+}
+.reasons-div p {
+  color: #0a0a0a;
+  font-size: 17px;
+  padding: 7px 14px;
+}
+.reasons-div {
+  gap: 8px;
+}
+
+#answer-btns {
+  background: #edf2fe;
+  color: #2a5bd7;
+  width: 30%;
+  margin-top: 15px;
+  padding: 15px 0;
+  text-align: center;
+  border-radius: var(--basic-radius);
 }
 
 .bnr-btn {
@@ -470,6 +524,10 @@ footer {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .answer {
+    padding: 0 0rem;
+  }
+
   #hide {
     display: none;
   }
@@ -529,6 +587,9 @@ footer {
   }
   .stat-item section {
     flex: 0.8;
+  }
+  #answer-btns {
+    width: 100%;
   }
 }
 
