@@ -53,7 +53,7 @@ button {
 
 .container {
   margin: 0 auto;
-  width: 1300px;
+  width: 1200px;
   max-width: 90%;
 }
 .flex {
@@ -231,7 +231,7 @@ button.AD881F8:hover {
 .shorten_form input,
 button {
   border-radius: var(--basic-radius);
-  padding: 20px;
+  padding: 16px;
   font-size: 20px;
 }
 .shorten_form button {
@@ -246,18 +246,15 @@ button {
 }
 
 .shortened {
-  /* justify-content: space-between; */
   background: white;
   /* padding: 1% 2%; */
   margin-top: 10px;
   gap: 10px;
   border-radius: var(--basic-radius);
-  /* animation: appear 500ms forwards; */
 }
 
 .base_url {
   flex: 0.6;
-  border: 1px solid red;
   padding: 10px;
 }
 .base_url h4 {
@@ -266,18 +263,36 @@ button {
 
 .shortened_rslt {
   flex: 0.4;
-  /* display: flex; */
-  /* align-items: center; */
-  /* justify-content: flex-end; */
-  border: 1px solid green;
+  justify-content: flex-end;
   padding: 10px;
   gap: 10px;
 }
+.error {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 1.6%;
+  padding: 10px 0;
+  background: #fa9b93 !important;
+  color: #cf2e2e;
+  border-radius: var(--basic-radius);
+  font-size: 16px;
+}
 
-.rslt_url {
-  /* color: var(--paste-color); */
-  /* color: pink; */
-  /* font-weight: 400; */
+.error span {
+  cursor: pointer;
+  /* font-size: 24px; */
+}
+.note {
+  padding: 10px;
+  background: #edf2fe;
+  justify-content: space-between;
+}
+.note p {
+  border-radius: var(--basic-radius);
+  padding: 7px 10px;
+  background: #2a5bd7;
+  color: #ffffff;
 }
 
 .action_btn:hover {
@@ -298,7 +313,8 @@ button {
   color: #2a5bd7;
   font-size: 16px;
   text-align: center;
-  padding: 10px 0;
+  padding: 8px 30px;
+  border-radius: var(--basic-radius);
 }
 
 #rslt_url {
@@ -405,7 +421,8 @@ footer {
 }
 
 #footer_img,
-#company {
+#company,
+#ea {
   display: none;
 }
 
@@ -460,6 +477,7 @@ footer {
     display: flex;
     justify-content: center;
     margin-top: -80px;
+    margin-bottom: 30px;
   }
   #footer_img,
   #company {
@@ -473,6 +491,20 @@ footer {
   .shortened_rslt {
     flex-direction: column;
     align-items: unset;
+  }
+  .note {
+    flex-direction: column;
+    align-items: unset;
+  }
+  .note h3 {
+    text-align: center;
+    margin-bottom: 12px;
+  }
+  .note p {
+    text-align: center;
+  }
+  .shortened {
+    gap: 0px;
   }
 }
 @media (min-width: 1001px) {
